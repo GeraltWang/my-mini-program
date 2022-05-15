@@ -1,0 +1,8 @@
+<template name="common-footer">
+  <view class="weui-footer" style="margin-top: 20px;">
+    <view class="weui-footer__links">
+      <navigator class="weui-footer__link weui-wa-hotarea" url="javascript:">和风天气提供天气数据支持</navigator>
+    </view>
+    <view class="weui-footer__text">All Rights Reserved; 2019-2022 GeraldWang</view>
+  </view>
+</template>

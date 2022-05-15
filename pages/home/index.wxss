@@ -1,0 +1,16 @@
+/* pages/home/index.wxss */
+.map-desc {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 70px;
+  line-height: 35px;
+  padding: 0 15px;
+  background-color: #fff;
+}
+
+.searchbar-result {
+  /* position: absolute;
+  top: 55px; */
+}

@@ -1,0 +1,5 @@
+/* pages/queryWeather/index.wxss */
+.pg_map {
+  width: 100%;
+  height: 200px;
+}

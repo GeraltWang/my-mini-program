@@ -1,0 +1,27 @@
+<!--pages/queryWeather/index.wxml-->
+<map class="pg_map" name="" latitude="{{latitude}}" longitude="{{longitude}}" markers="" enable-3D show-location></map>
+<view class="page__bd">
+  <view class="weui-panel weui-panel_access">
+    <view class="weui-panel__hd">最近三日天气</view>
+    <view class="weui-panel__bd">
+      <navigator wx:for="{{threeDays}}" wx:key="uk" aria-labelledby="js_p1m1_bd" class="weui-media-box weui-media-box_appmsg" url="javascript:">
+        <view aria-hidden="true" class="weui-media-box__hd">
+          <image class="weui-media-box__thumb" src="../../static/icons/{{ item.iconDay }}-fill.svg" alt></image>
+        </view>
+        <view aria-hidden="true" id="js_p1m1_bd" class="weui-media-box__bd">
+          <text class="weui-media-box__title">{{ item.fxDate }}</text>
+          <view class="weui-media-box__desc"><text>{{ item.textDay }}</text><text wx:if="{{ item.textDay !== item.textNight }}">转{{ item.textNight }}</text> {{ item.tempMin }}~{{ item.tempMax}}℃</view>
+        </view>
+      </navigator>
+    </view>
+    <view class="weui-panel__ft">
+      <navigator class="weui-cell weui-cell_active weui-cell_access weui-cell_link" url="javascript:">
+        <text class="weui-cell__bd">查看更多</text>
+        <text class="weui-cell__ft"></text>
+      </navigator>
+    </view>
+  </view>
+</view>
+<!-- 引入页脚 -->
+<import src="../../components/footer"></import>
+<template is="common-footer"></template>
