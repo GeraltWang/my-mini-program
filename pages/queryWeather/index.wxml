@@ -1,24 +1,76 @@
 <!--pages/queryWeather/index.wxml-->
-<map class="pg_map" name="" latitude="{{latitude}}" longitude="{{longitude}}" markers="" enable-3D show-location></map>
-<view class="page__bd">
-  <view class="weui-panel weui-panel_access">
-    <view class="weui-panel__hd">最近三日天气</view>
-    <view class="weui-panel__bd">
-      <navigator wx:for="{{threeDays}}" wx:key="uk" aria-labelledby="js_p1m1_bd" class="weui-media-box weui-media-box_appmsg" url="javascript:">
-        <view aria-hidden="true" class="weui-media-box__hd">
-          <image class="weui-media-box__thumb" src="../../static/icons/{{ item.iconDay }}-fill.svg" alt></image>
-        </view>
-        <view aria-hidden="true" id="js_p1m1_bd" class="weui-media-box__bd">
-          <text class="weui-media-box__title">{{ item.fxDate }}</text>
-          <view class="weui-media-box__desc"><text>{{ item.textDay }}</text><text wx:if="{{ item.textDay !== item.textNight }}">转{{ item.textNight }}</text> {{ item.tempMin }}~{{ item.tempMax}}℃</view>
-        </view>
-      </navigator>
-    </view>
-    <view class="weui-panel__ft">
-      <navigator class="weui-cell weui-cell_active weui-cell_access weui-cell_link" url="javascript:">
-        <text class="weui-cell__bd">查看更多</text>
-        <text class="weui-cell__ft"></text>
-      </navigator>
+<!-- <map class="pg_map" name="" latitude="{{latitude}}" longitude="{{longitude}}" markers="" enable-3D show-location></map> -->
+<view class="page" data-weui-theme="light">
+  <view class="weui-grids">
+		<navigator class="weui-grid" aria-role="button" url="javascript:" bindtap="doSearch" data-keyword="美食">
+			<view class="weui-grid__icon">
+				<view class="iconfont icon-xihuan iconsize"></view>
+			</view>
+			<view class="weui-grid__label">美食</view>
+		</navigator>
+		<navigator class="weui-grid" aria-role="button" url="javascript:" bindtap="doSearch" data-keyword="酒店">
+			<view class="weui-grid__icon">
+				<view class="iconfont icon-dianpu iconsize"></view>
+			</view>
+			<view class="weui-grid__label">酒店</view>
+		</navigator>
+		<navigator class="weui-grid" aria-role="button" url="javascript:" bindtap="doSearch" data-keyword="医院">
+			<view class="weui-grid__icon">
+				<view class="iconfont icon-yiyuan iconsize"></view>
+			</view>
+			<view class="weui-grid__label">医院</view>
+		</navigator>
+		<navigator class="weui-grid" aria-role="button" url="javascript:" bindtap="doSearch" data-keyword="银行">
+			<view class="weui-grid__icon">
+				<view class="iconfont icon-jifen iconsize"></view>
+			</view>
+			<view class="weui-grid__label">银行</view>
+		</navigator>
+		<navigator class="weui-grid" aria-role="button" url="javascript:" bindtap="doSearch" data-keyword="地铁">
+			<view class="weui-grid__icon">
+				<view class="iconfont icon-faxian iconsize"></view>
+			</view>
+			<view class="weui-grid__label">地铁</view>
+		</navigator>
+		<navigator class="weui-grid" aria-role="button" url="javascript:" bindtap="doSearch" data-keyword="公交">
+			<view class="weui-grid__icon">
+				<view class="iconfont icon-diqiu iconsize"></view>
+			</view>
+			<view class="weui-grid__label">公交</view>
+		</navigator>
+		<navigator class="weui-grid" aria-role="button" url="javascript:" bindtap="doSearch" data-keyword="公园">
+			<view class="weui-grid__icon">
+				<view class="iconfont icon-shandian iconsize"></view>
+			</view>
+			<view class="weui-grid__label">公园</view>
+		</navigator>
+		<navigator class="weui-grid" aria-role="button" url="javascript:" bindtap="doSearch" data-keyword="加油站">
+			<view class="weui-grid__icon">
+				<view class="iconfont icon-fenxiang iconsize"></view>
+			</view>
+			<view class="weui-grid__label">加油站</view>
+		</navigator>
+	</view>
+  <view class="page__bd">
+    <view class="weui-panel weui-panel_access">
+      <view class="weui-panel__hd">最近三日天气</view>
+      <view class="weui-panel__bd">
+        <navigator wx:for="{{threeDays}}" wx:key="uk" aria-labelledby="js_p1m1_bd" class="weui-media-box weui-media-box_appmsg" url="javascript:">
+          <view aria-hidden="true" class="weui-media-box__hd">
+            <image class="weui-media-box__thumb" src="../../static/icons/{{ item.iconDay }}.svg" alt></image>
+          </view>
+          <view aria-hidden="true" id="js_p1m1_bd" class="weui-media-box__bd">
+            <text class="weui-media-box__title">{{ item.fxDate }}</text>
+            <view class="weui-media-box__desc"><text>{{ item.textDay }}</text><text wx:if="{{ item.textDay !== item.textNight }}">转{{ item.textNight }}</text> {{ item.tempMin }}~{{ item.tempMax}}℃</view>
+          </view>
+        </navigator>
+      </view>
+      <view class="weui-panel__ft">
+        <navigator class="weui-cell weui-cell_active weui-cell_access weui-cell_link" url="javascript:">
+          <text class="weui-cell__bd">查看更多</text>
+          <text class="weui-cell__ft"></text>
+        </navigator>
+      </view>
     </view>
   </view>
 </view>

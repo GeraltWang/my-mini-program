@@ -16,7 +16,7 @@
       <view aria-role="button" class="weui-search-bar__cancel-btn" bindtap="hideInput">取消</view>
     </view>
     <view aria-role="listbox" id="searchResult" class="weui-cells searchbar-result" wx:if="{{inputVal.length > 0}}">
-			<view role="option" class="weui-cell weui-cell_active weui-cell_access" wx:for="{{tips}}" wx:key="id">
+			<view role="option" class="weui-cell weui-cell_active weui-cell_access" wx:for="{{tips}}" wx:key="id" bindtap="goRoute" data-poilocation="{{item.location}}">
 				<view class="weui-cell__bd weui-cell_primary">
 					<view>{{ item.name }}</view>
 				</view>

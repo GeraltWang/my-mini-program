@@ -1,0 +1,7 @@
+<!--pages/queryWeather/map.wxml-->
+<view class="page" data-weui-theme="light">
+  <map class="map" latitude="{{latitude}}" longitude="{{longitude}}" markers="{{markers}}" bindmarkertap="markerTap" enable-3D show-location></map>
+  <view class="map-desc" wx:if="{{markerData.name.length > 0}}">
+    <text>{{ markerData.name + ',' }}{{ markerData.address }}</text>
+  </view>
+</view>

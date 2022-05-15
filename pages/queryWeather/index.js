@@ -55,7 +55,8 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh() {
-
+    wx.showNavigationBarLoading()
+    this.getDayWeather()
   },
 
   /**
@@ -93,14 +94,27 @@ Page({
           this.setData({
             threeDays: resp.daily
           })
-          wx.hideLoading()
+          // wx.hideLoading()
         } else {
-          wx.hideLoading()
           wx.showToast({
             title: '获取天气数据失败',
           })
         }
+      },
+      complete: () => {
+        wx.hideNavigationBarLoading()
+        wx.stopPullDownRefresh()
+        wx.hideLoading()
       }
     })
+  },
+  // 跳转到地图并根据关键字查找周围的兴趣点
+  async doSearch(e) {
+    if (e.currentTarget.dataset.keyword) {
+      const keyword = e.currentTarget.dataset.keyword
+      wx.navigateTo({
+        url: `/pages/queryWeather/map?keyword=${keyword}`,
+      })
+    }
   }
 })

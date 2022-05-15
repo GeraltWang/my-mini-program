@@ -131,5 +131,13 @@ Page({
         }
       }
     })
+  },
+  // 跳转到路径导航页面
+  goRoute(e) {
+    if (e.currentTarget.dataset?.poilocation?.length > 0) {
+      wx.navigateTo({
+        url: `/pages/route/walking?poilocation=${e.currentTarget.dataset?.poilocation}`
+      })
+    }
   }
 })

@@ -1,0 +1,7 @@
+/* pages/route/walking.wxss */
+.weui-tabbar {
+  background: #ffffff;
+}
+.weui-tabbar__item {
+  padding: 8px 0;
+}
