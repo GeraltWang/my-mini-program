@@ -1,9 +1,6 @@
-<!--pages/route/walking.wxml-->
+<!--pages/route/driving.wxml-->
 <view class="page">
   <view class="page__bd" style="height: 100%;">
-    <view class="weui-tab__panel">
-      <map class="map" latitude="{{markers[0].latitude}}" longitude="{{markers[0].longitude}}" markers="{{markers}}" polyline="{{polyline}}" enable-3D show-location></map>
-    </view>
     <view class="weui-tab">
       <view aria-label="选项卡标题" class="weui-tabbar" aria-role="tablist">
         <view bindtap="changeNav" data-type="walking" id="tab1" aria-labelledby="t1_title" aria-describedby="t1_tips" aria-selected="true" aria-controls="panel1" class="weui-tabbar__item weui-bar__item_on" aria-role="tab">
@@ -18,7 +15,7 @@
         </view>
         <view bindtap="changeNav" data-type="driving" id="tab3" aria-labelledby="t3_title" aria-describedby="t3_tips" aria-selected="false" aria-controls="panel3" class="weui-tabbar__item" aria-role="tab">
           <view id="t3_tips" aria-hidden="true" style="display: inline-block; position: relative;">
-            <image src="/static/icons/car-grey.png" alt class="weui-tabbar__icon"></image>
+            <image src="/static/icons/car.png" alt class="weui-tabbar__icon"></image>
           </view>
           <view id="t3_title" aria-hidden="true" class="weui-tabbar__label">驾车</view>
         </view>

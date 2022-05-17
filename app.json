@@ -5,7 +5,10 @@
     "pages/index/index",
     "pages/map/index",
     "pages/logs/logs",
-    "pages/route/walking"
+    "pages/route/walking",
+    "pages/route/biking",
+    "pages/route/driving",
+    "pages/route/bus"
   ],
   "window": {
     "backgroundTextStyle": "light",

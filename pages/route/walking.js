@@ -1,4 +1,6 @@
 // pages/route/walking.js
+// 引入高德地图
+import map from '../../utils/amap-config'
 Page({
 
   /**
@@ -13,6 +15,27 @@ Page({
    */
   onLoad(options) {
     console.log(options);
+    if (options?.poilocation) {
+      const { longitude, latitude } = wx.getStorageSync('geoCoord')
+      const endLocation = options.poilocation.split(',')
+      this.setData({
+        poilocation: options.poilocation,
+        markers: [
+          { longitude, latitude },
+          { longitude: parseFloat(endLocation[0]), latitude: parseFloat(endLocation[1]) }
+        ]
+      })
+      console.log(this.data);
+      map.map.getWalkingRoute({
+        origin:`${longitude},${latitude}`,
+        destination: this.data.poilocation,
+        success: (res) => {
+          console.log(res);
+        }
+      })
+    } else {
+      console.log('poi参数缺失!');
+    }
   },
 
   /**
@@ -62,5 +85,14 @@ Page({
    */
   onShareAppMessage() {
 
+  },
+  changeNav(e) {
+    console.log(e);
+    if (e.currentTarget?.dataset?.type) {
+      const route = e.currentTarget?.dataset?.type
+      wx.navigateTo({
+        url: `/pages/route/${route}?poilocation=${this.data.poilocation}`,
+      })
+    }
   }
 })

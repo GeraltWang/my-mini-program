@@ -1,0 +1,14 @@
+/* pages/route/driving.wxss */
+.weui-tabbar {
+  background: #ffffff;
+}
+.weui-tabbar__item {
+  padding: 8px 0;
+}
+.weui-tab__panel {
+  position: absolute;
+  top: 60px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
